@@ -1,0 +1,26 @@
+{
+  "name": "marvel-app",
+  "version": "1.0.0",
+  "description": "A master detail list for a final project",
+  "main": "index.js",
+  "scripts": {
+    "watch-node-sass": "node-sass --watch scss/styles.scss --output public/css/  --source-map true",
+    "start": "browser-sync start --proxy 'localhost:9000' --browser \"google chrome\"  --files 'public'",
+    "marvel!": "concurrently \"nodemon app.js\" \"npm run start\" \"npm run watch-node-sass\" "
+  },
+  "keywords": [
+    "marvel"
+  ],
+  "author": "csumie <csurdanivia@gmail.com>",
+  "license": "ISC",
+    "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "concurrently": "^3.1.0",
+    "node-sass": "^4.4.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1"
+  }
+}
