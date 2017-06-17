@@ -1,0 +1,249 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Bangers';
+  font-size: 20px;
+  font-weight: 200; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #880624; }
+
+span {
+  padding-right: 2%; } 
+
+nav {
+  height: 10rem; }
+
+/*------- Nav Effects --------*/
+
+.panels {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex; }
+
+.panel {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  /*transition: font-size 0.7s cubic-bezier(0.57, -0.43, 0.75, 1.23), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);*/
+    -webkit-transition: all 800ms cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    -moz-transition: all 800ms cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    -o-transition: all 800ms cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    transition: all 800ms cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
+
+    -webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    -o-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); 
+    transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
+    
+  -webkit-clip-path: polygon(53% 0, 58% 21%, 91% 16%, 78% 36%, 100% 49%, 80% 66%, 86% 92%, 57% 80%, 38% 98%, 28% 75%, 5% 74%, 16% 51%, 0 42%, 21% 34%, 11% 11%, 39% 19%);
+  clip-path: polygon(53% 0, 58% 21%, 91% 16%, 78% 36%, 100% 49%, 80% 66%, 86% 92%, 57% 80%, 38% 98%, 28% 75%, 5% 74%, 16% 51%, 0 42%, 21% 34%, 11% 11%, 39% 19%);
+  transition: transform 0.5s;
+  font-size: 30px;
+  background-size: cover;
+  background-position: center; }
+
+.panel * {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s; }
+
+ .panel:hover {
+    background: #F8D507;
+    -webkit-clip-path: polygon(53% 0, 58% 21%, 91% 16%, 78% 36%, 100% 49%, 80% 66%, 86% 92%, 57% 80%, 38% 98%, 28% 75%, 5% 74%, 16% 51%, 0 42%, 21% 34%, 11% 11%, 39% 19%);
+    clip-path: polygon(53% 0, 58% 21%, 91% 16%, 78% 36%, 100% 49%, 80% 66%, 86% 92%, 57% 80%, 38% 98%, 28% 75%, 5% 74%, 16% 51%, 0 42%, 21% 34%, 11% 11%, 39% 19%);
+    transition: transform 0.5s;
+    opacity: 0.8;
+    width: 200px;
+    height: 200px;
+    -webkit-transform: rotate(360deg); /* Safari */
+    transform: rotate(360deg); }
+
+.panel a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Bangers', cursive;
+  text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  font-size: 1.6em; }
+
+.panel.active {
+  flex: 2;
+  font-size: 4em;
+  transform: translateX(100%) translateY(100%) scale(0.6);
+  text-decoration: none;
+  transition: transform 0.5s;
+  opacity: 0.7; }
+
+/*------- Page Components -------*/  
+
+/*------- Animation for Logo only ------*/
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.logo {
+ max-width: 90%;
+ height: auto;
+ padding: .5rem;
+ margin: 2rem auto;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+     }
+  .logo h1 {
+    font-family: bangers;
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 35px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    margin: 0; }
+}
+
+.highlight {
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 0, 0.3);
+  border-radius: 60%;
+  left: 0;
+  z-index: 1;
+  display: block;
+  pointer-events: none; }
+
+.go-away {
+  display: none; }
+
+@media only screen and (min-width: 200px) {
+ .info {
+  font-family: bangers;
+  font-size: 1.2em;
+  padding-right: 0.5rem;
+ } 
+}
+
+@media only screen and (max-width: 2000px) {
+ .mainImg {
+  max-width: 80%;
+  height: auto;
+  border: 3px solid #000;
+  float: left; 
+  margin: 0.5rem;
+ }
+}
+
+/*--------- Main Wrap ----------*/
+/*-------- Animation for Wrap ------*/
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.wrap {
+  background: #eee;
+  max-width: 90%;
+  height: auto;
+  padding: 1rem;
+  margin: 2rem auto;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp; }
+  .wrap h1 {
+    font-family: bangers;
+    margin-top: 0; }
+  .wrap ul {
+    list-style: none;
+    padding: 0; }
+  .wrap li {
+    display: flex;
+    padding: 1rem;
+    font-family: bangers;
+    color: #000; }
+    .wrap li img {
+      width: 30%;
+      height: 100%;
+      padding: 0.5rem;
+      border-radius: 60%;
+      border: 3px solid #000;
+      margin-left: 10%; }
+    .wrap li a {
+      color: #000;
+      font-size: 3em;
+      margin-left: 6%;
+      text-decoration: none; }
+  .wrap .character-thumbs {
+    display: flex; }
+    .wrap .character-thumbs li {
+      padding: 0; }
+    .wrap .character-thumbs img {
+      width: 100%;
+      padding: 0;
+      border: none; }
+
+
+/*# sourceMappingURL=styles.css.map */
